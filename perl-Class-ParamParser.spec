@@ -13,7 +13,6 @@ Source:		http://search.cpan.org/CPAN/authors/id/D/DU/DUNCAND/%{real_name}-%{vers
 URL:		http://search.cpan.org/dist/%{real_name}
 BuildArch:	noarch
 BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 This Perl 5 object class implements two methods which inherited classes can use
