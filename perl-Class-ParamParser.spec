@@ -1,7 +1,7 @@
 %define	real_name Class-ParamParser
 %define	name	perl-%{real_name}
 %define	version	1.041
-%define	release	2
+%define	release	3
 
 Summary:	CPAN %{real_name} perl module
 Name:		%{name}
