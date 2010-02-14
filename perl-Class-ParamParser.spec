@@ -1,19 +1,18 @@
-%define	real_name Class-ParamParser
-%define	name	perl-%{real_name}
-%define	version	1.041
-%define	release	3
+%define	upstream_name    Class-ParamParser
+%define	upstream_version 1.041
 
-Summary:	CPAN %{real_name} perl module
-Name:		%{name}
-Version:	%{version}
-Release:	%mkrel %{release}
-License:	GPL or Artistic
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 4
+
+Summary:	CPAN %{upstream_name} perl module
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/D/DU/DUNCAND/%{real_name}-%{version}.tar.bz2
-URL:		http://search.cpan.org/dist/%{real_name}
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DU/DUNCAND/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildArch:	noarch
-BuildRequires:	perl-devel
-BuildRoot:	%{_tmppath}/%{name}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This Perl 5 object class implements two methods which inherited classes can use
@@ -22,12 +21,14 @@ methods differ in that one returns a HASH ref containing named parameters and
 the other returns an ARRAY ref containing positional parameters.
 
 %prep
-%setup -q -n %{real_name}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
-make
-make test
+%make
+
+%check
+%make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -41,5 +42,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog ReadMe
 %{perl_vendorlib}/Class/ParamParser.pm
 %{_mandir}/*/*
-
-
