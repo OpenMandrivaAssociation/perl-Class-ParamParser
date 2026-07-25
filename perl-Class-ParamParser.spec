@@ -2,14 +2,14 @@
 %define	upstream_version 1.041
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	8
+Version:	%{upstream_version}
+Release:	9
 
 Summary:	CPAN %{upstream_name} perl module
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DU/DUNCAND/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/Class-ParamParser
+Source0:	https://cpan.metacpan.org/authors/id/D/DU/DUNCAND/Class-ParamParser-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
