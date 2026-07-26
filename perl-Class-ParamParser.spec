@@ -1,15 +1,13 @@
 %define	upstream_name    Class-ParamParser
-%define	upstream_version 1.041
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	9
+Version:	1.041
+Release:	10
 
 Summary:	CPAN %{upstream_name} perl module
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Class-ParamParser
-Source0:	https://cpan.metacpan.org/authors/id/D/DU/DUNCAND/Class-ParamParser-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DU/DUNCAND/Class-ParamParser-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ methods differ in that one returns a HASH ref containing named parameters and
 the other returns an ARRAY ref containing positional parameters.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -47,9 +45,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 
 * Sun Feb 14 2010 Jérôme Quelin <jquelin@mandriva.org> 1.41.0-4mdv2011.0
 + Revision: 505695
-- rebuild using %%perl_convert_version
-
-* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.041-3mdv2010.0
+- rebuild using %1.041 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.041-3mdv2010.0
 + Revision: 430332
 - rebuild
 
