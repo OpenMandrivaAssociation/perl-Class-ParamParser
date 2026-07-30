@@ -1,13 +1,14 @@
 %define	upstream_name    Class-ParamParser
+%define upstream_version 1.041
 Name:		perl-%{upstream_name}
 Version:	1.041
-Release:	10
+Release:	1
 
 Summary:	CPAN %{upstream_name} perl module
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Class-ParamParser
-Source0:	https://cpan.metacpan.org/authors/id/D/DU/DUNCAND/Class-ParamParser-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/D/DU/DUNCAND/Class-ParamParser-1.041.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -37,34 +38,4 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorlib}/Class/ParamParser.pm
 %{_mandir}/*/*
 
-
-%changelog
-* Sat May 28 2011 Funda Wang <fwang@mandriva.org> 1.41.0-5mdv2011.0
-+ Revision: 680825
-- mass rebuild
-
-* Sun Feb 14 2010 Jérôme Quelin <jquelin@mandriva.org> 1.41.0-4mdv2011.0
-+ Revision: 505695
-- rebuild using %1.041 Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 1.041-3mdv2010.0
-+ Revision: 430332
-- rebuild
-
-* Fri Dec 21 2007 Olivier Blin <oblin@mandriva.com> 1.041-2mdv2008.1
-+ Revision: 136684
-- restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-
-* Fri Jan 12 2007 Andreas Hasenack <andreas@mandriva.com> 1.041-2mdv2007.0
-+ Revision: 107894
-- rebuilt
-- using mkrel
-
-  + Guillaume Rousse <guillomovitch@mandriva.org>
-    - Import perl-Class-ParamParser
-
-* Thu Jul 21 2005 Andreas Hasenack <andreas@mandriva.com> 1.041-1mdk
-- packaged for Mandriva
 
